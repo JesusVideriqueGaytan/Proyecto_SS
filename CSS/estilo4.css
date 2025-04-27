@@ -1,0 +1,172 @@
+/*
+Hoja de estilo responsivo
+
+*/
+
+a:link{color:salmon;}
+a:visited{color:salmon; font-weight: lighter;}
+a:hover{color:DarkCyan; font-weight: bold;}
+a.menu{
+	display: inline-block;
+	padding: 0.5em;
+}
+p{
+	margin-left: 0.5em;
+	margin-bottom: 0.06em;
+	border-style: inset;
+        border-width: medium;
+	border-color: red;
+	border-radius: 5px;
+}
+p.otro{
+	border-style: outset;
+}
+button.especial{
+	background-color: AliceBlue;
+	color:DarkCyan;
+	font-weight: bold;
+}
+
+body{
+	font-family: Verdana, Helvetica, Arial, "Times New Roman";
+	color: blue;
+}
+img, video, canvas {
+  max-width: 100%;
+}
+header{
+	font-weight:bold;
+	text-align: left;
+}
+main {
+	border-radius: 1rem;
+	border: 0.2rem solid salmon;
+	text-transform: none;
+}
+section{
+	text-align: justify;
+        
+}
+table{
+	border-collapse: collapse; /*no aparezcan los bordes*/
+	width: 100%;
+}
+td, th {
+  border: 0.02em solid #5CA5C2;
+  padding: 0.5em;
+}
+th {
+  text-align: center;
+  background-color: #AEE150;
+}
+tr:nth-child(even){/*el color del fondo de renglones impares*/
+	background-color: AliceBlue;
+} 
+#titPral{
+	display: inline; 
+	vertical-align:90%;
+}
+
+/*Definir áreas para grid*/
+#main-header {
+	grid-area: header;
+	border-radius: 1rem;
+	border: 0.2rem solid salmon;
+	padding: 0.2em;
+	height: auto;
+	color: hsl(210, 90%, 16%);
+	font-size: large;
+	background-color:white; /*AntiqueWhite, rosa muy pálido*/
+	text-transform: capitalize;
+	text-shadow: 0.3em 0.3em 0.6em salmon; /*sombra horizontal y sombra vertical*/
+}
+
+#main-nav {
+	grid-area: nav;
+	display: block;
+	padding: 0.3em;
+	border-radius: 1rem;
+	border: 0.2rem solid salmon;
+        background-color:BlanchedAlmond;
+}
+#main-content {
+	grid-area: content;
+	padding: 0.5em;
+        background-color: white; /*#FAEBD7*/
+        text-align:right;
+}
+#main-aside {
+	grid-area: sidebar;
+	padding: 0.5em;
+	border-radius: 1rem;
+	border: 0.2rem solid salmon;
+        background-color: #FAEBD7;
+        
+}
+#main-advertisement {
+	grid-area: advertisement;
+	padding: 0.5em;
+	border-radius: 1rem;
+	border: 0.2rem solid salmon;
+        background-color: #FAEBD7;
+}
+#main-footer {
+	grid-area: footer;
+	font-size: 75%;
+	padding: 0.625em 0.9em 1.4em;
+	/*background-color:AliceBlue;*/
+        background-color: #FAEBD7;
+	text-align: center;
+}
+
+/*Definir contenido del grid (y como no se indica otra cosa, será una columna)*/
+#main-layout {
+	display: grid;
+	grid-gap: 0.2em;
+	grid-template-areas:
+		"header"
+		"nav"
+		"content"
+		"sidebar"
+		"advertisement"
+		"footer";
+}
+
+/*Alterar distribución para dispositivos "medianos", dos columnas (3/4 y 1/4)*/
+@media (min-width: 500px) {
+	#main-layout {
+		grid-template-columns: 3fr 1fr;
+		grid-template-areas:
+			  "header header"
+			  "nav nav"
+			  "content sidebar"
+			  "footer advertisement";
+	}
+	nav a.menu {
+		display:inline-block;
+		justify-content: space-between;
+	}
+}
+
+/*Alterar distribución para dispositivos mayores (3 columnas: 1/6, 4/6, 1/6)*/
+@media (min-width: 700px) {
+	#main-layout {
+		grid-template-columns: 1fr 4fr 1fr;
+		grid-template-areas:
+			"header header  header"
+			"nav content sidebar"
+			"nav content advertisement"
+			"footer footer footer"
+	}
+	
+	#main-header {
+		height: 5.5em;
+	}
+	nav a.menu {
+		display:inline-block;
+		width:100%;
+	}
+	#main-content{
+		min-height: 18rem;
+	}
+}

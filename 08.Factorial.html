@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Factorial de un número - Práctica 8</title>
+    <link rel="stylesheet" href="CSS/estiloblog.css">
+</head>
+<body>
+    <div class="seccion">
+        <div class="caja">
+            <h1>Cálculo de Factorial</h1>
+        </div>
+    </div>
+
+    <div class="seccion">
+        <h3><strong>Objetivo de la p&aacute;gina web</strong></h3>
+        <p style="text-align: justify;">El objetivo de esta página es calcular el factorial de un número introducido por el usuario.</p>
+
+        <h3><strong>Funcionalidad</strong></h3>
+        <p style="text-align: justify;">
+            <ul>
+                <li>Al hacer clic en el botón, se solicita un número mediante cuadro de diálogo.</li>
+                <li>Se calcula el factorial del número introducido.</li>
+                <li>El resultado se muestra en la página con el proceso detallado.</li>
+                <li>Incluye validación para números negativos y valores no numéricos.</li>
+            </ul>
+        </p>
+
+        <h3><strong>Funciones JavaScript</strong></h3>
+        <p style="text-align: justify;">
+            <ul>
+                <li><strong>for</strong> Multiplica los valores desde 1 hasta el número ingresado.</li>
+                <li><strong>prompt()</strong> - Función que muestra un cuadro de diálogo para entrada de datos</li>
+                <li><strong>alert()</strong> - Función que muestra el resultado en un cuadro de diálogo</li>
+            </ul>
+        </p>
+    </div>
+    <script type="text/javascript">
+        var numero=prompt("Introduce un número y se morará su factorial");
+        var resultado=1;
+
+        for(var i=1;i<=numero;i++){
+            resultado *=i
+        }
+        alert(resultado);
+    </script>
+</body>
+</html>

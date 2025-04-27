@@ -1,0 +1,83 @@
+<!DOCTYPE>
+<html lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Ejercicio 11 - DOM básico y atributos CSS</title>
+<link rel="stylesheet" href="CSS/estiloblog.css">
+<style type="text/css">
+      .oculto { display: none; }
+      .visible { display: inline; }
+</style>
+
+<script type="text/javascript">
+function muestra() {
+  var elemento = document.getElementById("adicional");
+  elemento.className = "visible";
+
+  var enlace = document.getElementById("enlace");
+  enlace.className = "visible";
+
+  var enlace1 = document.getElementById("enlace1");
+  enlace.className = "oculto";
+
+}
+
+function oculta() {
+  var elemento = document.getElementById("adicional");
+  elemento.className = "oculto";
+
+  var enlace = document.getElementById("enlace");
+  enlace.className = "oculto";
+
+  var enlace1 = document.getElementById("enlace1");
+  enlace.className = "visible";
+
+}
+</script>
+</head>
+
+<body>
+    <div class="seccion">
+        <div class="caja">
+            <h1>Curiosidades del Cine</h1>
+            <p class="texto" align="justify">
+                El cine es un arte fascinante que ha evolucionado enormemente desde sus inicios. Desde las primeras películas mudas hasta los modernos efectos digitales, el séptimo arte ha cautivado al público mundial. El cine no solo entretiene, sino que también documenta épocas, culturas y formas de pensar.
+                <span id="adicional" class="oculto">
+                    Un dato curioso: la primera película de la historia fue "La escena del jardín de Roundhay" filmada en 1888, duraba apenas 2 segundos. El cine ha dado grandes directores como Stanley Kubrick, cuyas películas son estudiadas en universidades. Actualmente, plataformas como Netflix han revolucionado la forma de consumir cine. ¿Sabías que "El Padrino" casi no tiene música en sus escenas más intensas? Fue una decisión deliberada de Coppola para aumentar el realismo.
+                    <a id="enlace1" href="#" onclick="oculta()">Mostrar menos</a><br>
+                </span>
+            </p>
+            <a id="enlace" href="#" onclick="muestra()">Leer más curiosidades</a><br>
+        </div>
+    </div>
+
+    <div class="seccion">
+        <h3><strong>Objetivo de la p&aacute;gina web</strong></h3>
+        <p style="text-align: justify;">Demostrar el uso de JavaScript para mostrar y ocultar contenido dinámicamente, aplicado a información cinematográfica.</p>
+
+        <h3><strong>Funcionalidad</strong></h3>
+        <p style="text-align: justify;">
+            <ul>
+                <li>Al hacer clic en "Leer más curiosidades", se muestra contenido adicional sobre cine.</li>
+                <li>El botón cambia a "Mostrar menos" para ocultar el texto extendido.</li>
+                <li>La transición se realiza sin recargar la página mediante manipulación del DOM.</li>
+            </ul>
+        </p>
+
+        <h3><strong>Funciones JavaScript</strong></h3>
+        <p style="text-align: justify;">
+            <ul>
+                <li><strong>muestra()</strong> - Muestra el contenido oculto y cambia los enlaces</li>
+                <li><strong>oculta()</strong> - Oculta el contenido adicional y restaura el enlace original</li>
+                <li><strong>className</strong> - Cambia las clases CSS para controlar la visibilidad</li>
+            </ul>
+        </p>
+
+        <h3><strong>Clases CSS utilizadas</strong></h3>
+        <ul>
+            <li><strong>oculto</strong> - No muestra el elemento (display: none)</li>
+            <li><strong>visible</strong> - Muestra el elemento (display: inline)</li>
+        </ul>
+    </div>
+</body>
+</html>

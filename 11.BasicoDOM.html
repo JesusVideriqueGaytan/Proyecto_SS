@@ -1,0 +1,103 @@
+<!DOCTYPE html lang="es">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>DOM básico - Análisis de enlaces - Práctica 11</title>
+    <link rel="stylesheet" href="CSS/estiloblog.css">
+        <script type="text/javascript">
+            window.onload=function(){
+                var info=document.getElementById("Información");
+                
+                var enlaces= document.getElementsByTagName("a");
+                
+                info.innerHTML= "numeroo de enlaces = "+enlaces.length;
+
+                var mensaje= "El pen&uacute;ltimo enlace apunta a: "+ enlaces[enlaces.length-2].href;
+                
+                info.innerHTML = info.innerHTML + "<br>"+ mensaje;
+
+                var contador =0;
+                
+                for (var i=0;i<enlaces.length;i++)
+                
+                if(enlace[i].href=="https://prueba"||enlaces[i].href=="https://prueba"||enlaces.href=="https//prueba/")
+                
+                info.innerHTML=info.innerHTML + "<br>" + "Numero de enlaces del tercer parrafo";
+                
+                contador ++;
+
+                info.innerHTML=info.innerHTML + "<br/>" + contador + "enlaces apuntan a https://"
+
+                var parrafos=document.getElementsByTagName("p");
+                enlaces = parrafos[2].getElementsByTagName("a");
+
+                info.innerHTML=info.innerHTML + "<br/>" + "numero de enlaces del tercer parrafo = " + enlaces.length;
+            }
+             </script>
+    </head>
+    <body>
+        <div class="seccion">
+            <div class="caja">
+             <div id="Información" style="border: thin solid silver; padding:.5em;"></div>
+            </div>
+        </div>
+        <div class="seccion">
+            <h3> Cine Clasico</h3>
+            <p align="justify">
+                El cine clásico nos ha dejado obras maestras como <a href="https://www.filmaffinity.com/mx/film615891.html" 
+                target="_blank">"Ciudadano Kane"</a> de Orson Welles, considerada por muchos como la mejor película de la 
+                historia. Otros directores como Alfred Hitchcock con <a href="https://www.filmin.es/pelicula/psicosis" 
+                target="_blank">"Psicosis"</a> revolucionaron el género de terror. La época dorada de Hollywood produjo 
+                joyas como "Casablanca" y "Lo que el viento se llevó", que siguen siendo estudiadas en escuelas de cine. 
+            </p>
+
+            <h3>El cine moderno</h3>
+            <p align="justify">
+                En las últimas décadas, directores como <a href="https://www.imdb.com/es/name/nm0634240/https://www.imdb.com/es/name/nm0634240/" 
+                target="_blank">Christopher Nolan</a> con su trilogía de Batman o <a href="https://www.imdb.com/es/title/tt1375666/">
+                "Inception"</a> han llevado el cine a nuevos niveles. Películas como "El Padrino" de Francis Ford 
+                Coppola siguen siendo referencia absoluta del buen cine. El desarrollo de efectos especiales ha 
+                permitido crear mundos fantásticos como los de "Avatar" o las sagas de Marvel. 
+            </p>
+
+            <h3>El cine internacional</h3>
+            <p align="justify">
+                No podemos olvidar el cine internacional con obras como <a href="https://www.filmaffinity.com/mx/film520465.html">
+                "Parásitos"</a> del coreano Bong Joon-ho, primera película no anglófona en ganar el Oscar. El cine europeo 
+                nos ha dado directores como <a href="https://www.filmaffinity.com/mx/name.php?name-id=280254478">Almodóvar</a> 
+                con su estilo único. Y en Asia, el anime japonés con <a href="https://www.filmaffinity.com/mx/name.php?name-id=981117798">
+                Studio Ghibli</a> ha conquistado audiencias globales con películas como "El viaje de Chihiro". 
+            </p>
+        <div class="seccion">
+        <h3><strong>Objetivo de la p&aacute;gina web</strong></h3>
+        <p style="text-align: justify;">Analizar estadísticamente los enlaces contenidos en textos utilizando el DOM 
+            de JavaScript.</p>
+
+        <h3><strong>Funcionalidad</strong></h3>
+        <p style="text-align: justify;">
+            <ul>
+                <li>Al cargar la página, se ejecuta un script que analiza automáticamente todos los enlaces.</li>
+                <li>Muestra información sobre: número total de enlaces, destino del penúltimo enlace, y enlaces 
+                    específicos.</li>
+                <li>Los resultados se muestran en el div con id "Información".</li>
+            </ul>
+        </p>
+
+        <h3><strong>Funciones JavaScript</strong></h3>
+        <p style="text-align: justify;">
+            <ul>
+                <li><strong>getElementsByTagName()</strong> Obtiene todos los elementos de un tipo (en este caso 'a' 
+                    para enlaces).</li>
+                <li><strong>innerHTML</strong> Modifica el contenido HTML del elemento de información.</li>
+                <li><strong>window.onload</strong> Espera a que la página cargue completamente antes de ejecutar el 
+                    script.</li>
+            </ul>
+        </p>
+    </div>
+    </body>
+</html>
+
+    
+</body>
+</html>

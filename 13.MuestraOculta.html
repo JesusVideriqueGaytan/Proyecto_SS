@@ -1,0 +1,87 @@
+<!DOCTYPE>
+<html>
+<head>
+	<link rel="stylesheet" href="CSS/estiloblog.css">
+	<title>Ejercicio 14 - DOM bÃ¡sico Muetra y Oculta atributos HTML</title>
+	<script type="text/javascript">
+	function muestraOculta(id) {
+	  var elemento = document.getElementById('contenidos_'+id);
+	  var enlace = document.getElementById('enlace_'+id);
+
+	  if(elemento.style.display == "" || elemento.style.display == "block") {
+	           elemento.style.display = "none";
+	    enlace.innerHTML = 'Mostrar contenidos';
+	  }
+	  else {
+	    elemento.style.display = "block";
+	    enlace.innerHTML = 'Ocultar contenidos';
+	  }
+	}
+	</script>
+	</head>
+<body>
+    <div class="seccion">
+        <div class="caja">
+            <h1>Curiosidades y Datos del Cine</h1>
+            
+            <p id="contenidos_1" align="justify">
+                <strong>Historia del Cine:</strong> El cine nació oficialmente el 28 de diciembre de 1895 cuando los 
+				hermanos Lumière proyectaron sus primeras películas en París. Desde entonces, ha evolucionado desde 
+				el cine mudo en blanco y negro hasta las modernas producciones digitales en 3D. El primer 
+				largometraje fue "The Story of the Kelly Gang" (1906) con una duración de 60 minutos.
+            </p>
+            <a id="enlace_1" href="#" onclick="muestraOculta('1'); return false;">Ocultar contenidos</a>
+
+            <br/>
+
+            <p id="contenidos_2" align="justify">
+                <strong>Tecnología Cinematográfica:</strong> El cine ha revolucionado su tecnología desde el sonido 
+				(1927 con "El cantante de jazz"), el color (1939 con "Lo que el viento se llevó"), hasta los efectos 
+				digitales actuales. James Cameron's "Avatar" (2009) marcó un hito en el uso de CGI y tecnología 3D. 
+				Hoy, el formato IMAX y el High Frame Rate (HFR) ofrecen experiencias visuales más inmersivas.
+            </p>
+            <a id="enlace_2" href="#" onclick="muestraOculta('2'); return false;">Ocultar contenidos</a>
+
+            <br/>
+            
+            <p id="contenidos_3"align="justify">
+                <strong>Récords y Curiosidades:</strong> "Gone with the Wind" (1939) sigue siendo la película más 
+				taquillera ajustada por inflación. "The Shawshank Redemption", aunque fracasó en taquilla, es ahora 
+				considerada una de las mejores. Stanley Kubrick filmó 127 tomas del mismo plano en "El Resplandor". 
+				El actor Tom Cruise realiza sus propias escenas de riesgo, incluso escalando el Burj Khalifa en 
+				"Mission: Impossible - Ghost Protocol".
+            </p>
+            <a id="enlace_3" href="#" onclick="muestraOculta('3'); return false;">Ocultar contenidos</a>
+        </div>
+    </div>
+
+    <div class="seccion">
+        <h3><strong>Objetivo de la p&aacute;gina web</strong></h3>
+        <p style="text-align: justify;">Demostrar el uso avanzado de JavaScript para mostrar y ocultar múltiples secciones de contenido de forma independiente.</p>
+
+        <h3><strong>Funcionalidad</strong></h3>
+        <p style="text-align: justify;">
+            <ul>
+                <li>Cada sección de contenido tiene su propio botón de mostrar/ocultar</li>
+                <li>La visibilidad de cada sección se controla de forma independiente</li>
+                <li>El texto del enlace cambia dinámicamente según el estado (Mostrar/Ocultar)</li>
+                <li>La función reutilizable maneja cualquier número de secciones</li>
+            </ul>
+        </p>
+
+        <h3><strong>Funciones JavaScript</strong></h3>
+        <p style="text-align: justify;">
+            <ul>
+                <li><strong>muestraOculta</strong> Función única que maneja todos los casos:
+                    <ul>
+                        <li>Recibe el ID de la sección a mostrar/ocultar</li>
+                        <li>Alterna entre display "block" y "none"</li>
+                        <li>Cambia el texto del enlace correspondiente</li>
+                    </ul>
+                </li>
+                <li><strong>style.display</strong> Propiedad que controla la visibilidad de los elementos</li>
+            </ul>
+        </p>
+    </div>
+</body>
+</html>

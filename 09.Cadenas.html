@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Información sobre cadenas - Práctica 9</title>
+    <link rel="stylesheet" href="CSS/estiloblog.css">
+    <script type="text/javascript">
+        function info(cadena){
+            var resultado="La cadena\""+cadena+"\" ";
+
+            if(cadena==cadena.toUpperCase())
+                resultado += " Está formada solo por mayusculas"
+            else if (cadena==cadena.toLowerCase())
+                resultado += " Está formado solo por minusculas"
+            else
+                resultado += " Está formada por mayusculas y minusculas"
+        return resultado
+        }
+        alert(info("OVNI = OBJETO VOLADOR NO IDENTIFICADO"));
+        alert(info("En un lufar de la mancha..."));
+        alert(info("aprendiendo javascript..."))
+    </script>
+</head>
+<body>
+    <div class="seccion">
+        <div class="caja">
+            <h1>Análisis de Cadenas de Texto</h1>
+            <p>Esta página muestra análisis de tres cadenas de ejemplo mediante alertas.</p>
+        </div>
+    </div>
+
+    <div class="seccion">
+        <h3><strong>Objetivo de la p&aacute;gina web</strong></h3>
+        <p style="text-align: justify;">El objetivo de esta página es analizar cadenas de texto para determinar si están formadas solo por mayúsculas, solo por minúsculas o por una combinación de ambas.</p>
+
+        <h3><strong>Funcionalidad</strong></h3>
+        <p style="text-align: justify;">
+            <ul>
+                <li>Al cargar la página, se ejecuta automáticamente un script que analiza tres cadenas predefinidas.</li>
+                <li>Cada análisis se muestra en una ventana emergente (alert) separada.</li>
+                <li>El script utiliza la función <strong>info()</strong> para realizar el análisis.</li>
+            </ul>
+        </p>
+
+        <h3><strong>Funciones JavaScript</strong></h3>
+        <p style="text-align: justify;">
+            <ul>
+                <li><strong>info(cadena)</strong> - Recibe una cadena y devuelve un mensaje indicando:
+                    <ul>
+                        <li>Si la cadena contiene solo mayúsculas</li>
+                        <li>Si contiene solo minúsculas</li>
+                        <li>Si es una mezcla de ambas</li>
+                    </ul>
+                </li>
+                <li><strong>alert()</strong> - Muestra los resultados en ventanas emergentes</li>
+                <li><strong>toUpperCase()</strong> - Convierte la cadena a mayúsculas</li>
+                <li><strong>toLowerCase()</strong> - Convierte la cadena a minúsculas</li>
+            </ul>
+        </p>
+    </div>
+</body>
+</html>

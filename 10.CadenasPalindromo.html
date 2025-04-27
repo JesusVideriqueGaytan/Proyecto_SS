@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+     <title>Detección de palíndromos - Práctica 10</title>
+     <link rel="stylesheet" href="CSS/estiloblog.css">
+     <script type="text/javascript">
+        function palindromo(cadena){
+
+            var resultado="La cadena\""+cadena+"\" \n";
+
+            var cadenaOriginal = cadena.toLowerCase();
+
+            var letrasEspacios=cadenaOriginal.split("");
+
+            var cadenaSinEspacios ="";
+            for(i in letrasEspacios)
+                if(letrasEspacios[i]!=" ")
+                    cadenaSinEspacios += letrasEspacios[i];
+
+            var letras = cadenaSinEspacios.split("");
+            var letrasReves = cadenaSinEspacios.split("").reverse();
+
+            var iguales= true;
+            for(i in letras)
+                if (letras[i] !=letrasReves[i])
+                    iguales=false;
+            if(iguales)
+                resultado+=" es un palindromo";
+            else
+                resultado+=" no es un palindromo";
+        return resultado;
+        }
+    
+        alert(palindromo("La ruta nos aporto otro paso natural"));
+        alert(palindromo("Esta frase no se parece a ningun palindromo"));
+    </script>
+       </head>
+       <body>
+           <div class="seccion">
+               <div class="caja">
+                   <h1>Detección de Palíndromos</h1>
+                   <p>Esta página analiza cadenas de texto para determinar si son palíndromos.</p>
+
+                   <h3><strong>¿Qué es un palíndromo?</strong></h3>
+                <p style="text-align: justify;">Un palíndromo es una palabra, frase o secuencia que se lee igual en un sentido que en otro, ignorando normalmente los espacios y signos de puntuación. Ejemplo clásico: "Anita lava la tina".</p>
+           
+               </div>
+           </div>
+       
+           <div class="seccion">
+               <h3><strong>Objetivo de la p&aacute;gina web</strong></h3>
+               <p style="text-align: justify;">El objetivo de esta página es identificar palíndromos (frases que se leen igual de izquierda a derecha que de derecha a izquierda) mediante un algoritmo JavaScript.</p>
+       
+               <h3><strong>Funcionalidad</strong></h3>
+               <p style="text-align: justify;">
+                   <ul>
+                       <li>Al cargar la página, se ejecuta automáticamente un script que analiza dos frases de ejemplo.</li>
+                       <li>Cada análisis se muestra en una ventana emergente (alert) separada.</li>
+                       <li>El script utiliza la función <strong>palindromo()</strong> para realizar el análisis.</li>
+                   </ul>
+               </p>
+       
+               <h3><strong>Funciones JavaScript</strong></h3>
+               <p style="text-align: justify;">
+                   <ul>
+                       <li><strong>palindromo(cadena)</strong> Analiza una cadena y determina si es palíndromo mediante:
+                           <ul>
+                               <li>Conversión a minúsculas</li>
+                               <li>Eliminación de espacios</li>
+                               <li>Comparación con su versión invertida</li>
+                           </ul>
+                       </li>
+                        <li><strong>toLowerCase()</strong> Normaliza la cadena a minúsculas</li>
+                        <li><strong>split()</strong> Divide la cadena en caracteres</li>
+                        <li><strong>reverse()</strong> Invierte el orden de los caracteres</li>
+                     </ul>
+                </p>
+       </body>
+       </html>

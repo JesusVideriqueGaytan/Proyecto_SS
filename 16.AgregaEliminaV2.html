@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar elementos</title>
+    <link rel="stylesheet" href="CSS/estiloblog.css">
+    <script type="text/javascript">
+      function modifica(tipo) {
+      lista = document.getElementById("lista");
+      switch(tipo){
+      case 'D':    //Agrega elemento mediante DOM
+                  var elemento = document.createElement("li");
+                  var texto = document.createTextNode("Nuevo DOM");
+                  elemento.appendChild(texto);
+                  lista.appendChild(elemento);
+                  break;
+      case 'H': //Agrega elemento mediante HTML
+                  var nuevoElemento = "<li>Nuevo HTML</li>";
+                  lista.innerHTML = lista.innerHTML + nuevoElemento;
+                  break;
+      default:  //Elimina elemento
+                  alert("Elimina");
+                  elemento_li = document.getElementsByTagName("li");
+                  lista.removeChild(elemento_li[ elemento_li.length-1]);
+        }
+      }
+    </script>
+</head>
+
+<body>
+  <div class="seccion">
+    <div class="caja">
+      <ul id="lista">
+        <li>Lorem ipsum dolor sit amet</li>
+        <li>Consectetuer adipiscing elit</li>
+        <li>Sed mattis enim vitae orci</li>
+        <li>Phasellus libero</li>
+        <li>Maecenas nisl arcu</li>
+      </ul>
+
+      <input type="button" value="Agrega elemento DOM " onclick="modifica('D');">
+      <input type="button" value="Agrega elemento HTML " onclick="modifica('H');">
+      <input type="button" value="Elimina elemento " onclick="modifica('R');">
+    </div>
+  </div>
+  <div class="seccion">
+    <h3><strong>Objetivo de la p&aacute;gina web</strong></h3>
+    <p style="text-align: justify;">Demostrar diferentes métodos de manipulación del DOM para agregar y eliminar elementos de una lista, comparando el enfoque DOM puro con la modificación directa del HTML.</p>
+
+    <h3><strong>Funcionalidad</strong></h3>
+    <p style="text-align: justify;">
+        <ul>
+            <li>Muestra una lista inicial con 5 elementos</li>
+            <li>Permite agregar elementos mediante dos métodos diferentes:
+                <ul>
+                    <li><strong>Método DOM:</strong> Usando createElement y appendChild</li>
+                    <li><strong>Método HTML:</strong> Modificando directamente innerHTML</li>
+                </ul>
+            </li>
+            <li>Permite eliminar el último elemento de la lista</li>
+            <li>Todas las operaciones se realizan sin recargar la página</li>
+        </ul>
+    </p>
+
+    <h3><strong>Funciones JavaScript</strong></h3>
+    <p style="text-align: justify;">
+        <ul>
+            <li><strong>modifica(tipo)</strong> - Función principal que:
+                <ul>
+                    <li>Recibe un parámetro que determina la operación (D, H o R)</li>
+                    <li>Usa una estructura switch para ejecutar diferentes operaciones</li>
+                </ul>
+            </li>
+            <li><strong>Métodos DOM utilizados:</strong>
+                <ul>
+                    <li><strong>createElement()</strong> Crea nuevos elementos HTML</li>
+                    <li><strong>createTextNode()</strong> Crea nodos de texto</li>
+                    <li><strong>appendChild()</strong> Añade elementos al DOM</li>
+                    <li><strong>getElementsByTagName()</strong> Obtiene elementos por etiqueta</li>
+                    <li><strong>removeChild()</strong> Elimina elementos del DOM</li>
+                    <li><strong>innerHTML</strong> Modifica contenido HTML directamente</li>
+                </ul>
+            </li>
+        </ul>
+    </p>
+</div>
+</body>
+</html>

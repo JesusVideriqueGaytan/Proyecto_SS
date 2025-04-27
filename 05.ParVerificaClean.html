@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Funciones Básicas - Verificar número par (versión mejorada)</title>
+    <link rel="stylesheet" href="CSS/estiloblog.css">
+</head>
+<body>
+    <div class="seccion">
+        <div class="caja">
+            <h1>Programa que verifica si un n&uacute;mero es par</h1>
+            <form>
+                <label>Introduce un n&uacute;mero:</label>
+                <input type="text" id="num" name="numero" value=""/>
+                <button type="button" onclick="esPAR(num.value)">Verificar</button>
+                <button type="button" onclick="limpiar()">Limpiar resultados</button>
+            </form>
+            <div id="resultados" class="resultados"></div>
+        </div>
+    </div>
+
+    <div class="seccion">
+        <h3><strong>Objetivo de la p&aacute;gina web</strong></h3>
+        <p style="text-align: justify;">El objetivo de esta página es demostrar el uso avanzado de funciones en JavaScript para verificar si un número es par o impar mediante interacción con el usuario, mostrando los resultados en la misma sección.</p>
+
+        <h3><strong>Funcionalidad</strong></h3>
+        <p style="text-align: justify;">
+            <ul>
+                <li>El usuario introduce un número en el campo de texto.</li>
+                <li>Al hacer clic en "Verificar", se muestra el resultado en el área de resultados dentro de la misma 
+                    caja.</li>
+                <li>El botón "Limpiar resultados" elimina todos los resultados mostrados.</li>
+                <li>El campo de entrada se limpia automáticamente después de cada verificación.</li>
+            </ul>
+        </p>
+
+        <h3><strong>Funciones JavaScript</strong></h3>
+        <p style="text-align: justify;">
+            <ul>
+                <li><strong>esPAR(numero)</strong>  Muestra el resultado en el área designada dentro de la caja.</li>
+                <li><strong>parImpar(numero)</strong>  Determina si el número es par o impar usando el operador módulo.</li>
+                <li><strong>limpiar()</strong>  Limpia el área de resultados.</li>
+            </ul>
+        </p>
+    </div>
+
+    <script type="text/javascript">
+        function limpiar(){
+            document.getElementById("resultados").innerHTML = "";
+        }
+        
+        function esPAR(numero){
+            var resultado = parImpar(numero);
+            var resultadosDiv = document.getElementById("resultados");
+            var nuevoResultado = document.createElement("p");
+            nuevoResultado.textContent = "El número " + numero + " es " + resultado;
+            resultadosDiv.appendChild(nuevoResultado);
+            document.getElementById("num").value = "";
+        }
+
+        function parImpar(numero){
+            if(numero % 2 == 0) return "par";
+            else return "impar";
+        }
+    </script>
+</body>
+</html>

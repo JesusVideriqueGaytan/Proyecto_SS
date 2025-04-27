@@ -1,0 +1,60 @@
+<!DOCTYPE>
+<html lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Ejercicio 13 - DOM b&aacute;sico y atributos HTML</title>
+<link rel="stylesheet" href="CSS/estiloblog.css">
+  <script type="text/javascript">
+    var contador=3;
+    function anade() {
+
+      var lista = document.getElementById("lista");
+      var elemento = document.createElement("li");
+      var nuevoElemento = "<li>Elemento "+(++contador)+"</li>";
+      lista.innerHTML = lista.innerHTML + nuevoElemento;
+    }
+  </script>
+</head>
+
+<body>
+	<div class="seccion">
+    <div class="caja">
+      <ul id="lista">
+        <li>Elemento 1</li>
+        <li>Elemnto 2</li>
+        <li>Elemento 3</li>
+      </ul>
+    <input type="button" value="Añadir elemento" onclick="anade();">
+    </div>
+  </div>
+  <div class="seccion">
+    <h3><strong>Objetivo de la p&aacute;gina web</strong></h3>
+    <p style="text-align: justify;">Demostrar la manipulación dinámica de listas HTML mediante JavaScript, permitiendo agregar nuevos elementos de forma interactiva.</p>
+
+    <h3><strong>Funcionalidad</strong></h3>
+    <p style="text-align: justify;">
+        <ul>
+            <li>Muestra una lista inicial con 3 elementos</li>
+            <li>Permite agregar nuevos elementos a la lista con el botón "Añadir elemento"</li>
+            <li>Cada nuevo elemento se numera secuencialmente</li>
+            <li>La actualización de la lista se realiza sin recargar la página</li>
+        </ul>
+    </p>
+
+    <h3><strong>Funciones JavaScript</strong></h3>
+    <p style="text-align: justify;">
+        <ul>
+            <li><strong>añade()</strong> Función que:
+                <ul>
+                    <li>Incrementa el contador de elementos</li>
+                    <li>Crea un nuevo elemento de lista </li>
+                    <li>Añade el nuevo elemento al final de la lista existente</li>
+                </ul>
+            </li>
+            <li><strong>document.createElement()</strong> Crea nuevos elementos HTML</li>
+            <li><strong>innerHTML</strong> Propiedad que modifica el contenido HTML</li>
+        </ul>
+    </p>
+</div>
+</body>
+</html>

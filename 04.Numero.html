@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Funciones Básicas - Verificar número par</title>
+    <link rel="stylesheet" href="CSS/estiloblog.css">
+</head>
+<body>
+    <div class="seccion">
+        <div class="caja">
+        <h1>Programa que verifica si un n&uacute;mero es par</h1>
+        <form>
+            <label>Introduce un n&uacute;mero:</label>
+            <input type="text" id="num" name="numero" value=""/>
+            <button type="button" onclick="esPAR(num.value)">Verificar</button>
+        </form>
+    </div>
+    </div>
+
+    <div class="seccion">
+        <h3><strong>Objetivo de la p&aacute;gina web</strong></h3>
+        <p style="text-align: justify;">El objetivo de esta página es demostrar el uso de funciones en JavaScript para verificar si un número es par o impar mediante interacción con el usuario.</p>
+
+        <h3><strong>Funcionalidad</strong></h3>
+        <p style="text-align: justify;">
+            <ul>
+                <li>El usuario introduce un número en el campo de texto.</li>
+                <li>Al hacer clic en el botón "Verificar", se ejecuta la función esPAR().</li>
+                <li>La función llama a parImpar() que realiza el cálculo matemático.</li>
+                <li>Muestra un alert con el resultado (par o impar).</li>
+            </ul>
+        </p>
+
+        <h3><strong>Funciones JavaScript</strong></h3>
+        <p style="text-align: justify;">
+            <ul>
+                <li><strong>esPAR</strong> - Recibe el número, llama a parImpar() y muestra el resultado.</li>
+                <li><strong>parImpar</strong> - Realiza la operación módulo (%) para determinar si es par o impar.</li>
+            </ul>
+        </p>
+    </div>
+
+    <script type="text/javascript">
+        function esPAR(numero){
+            var resultado = parImpar(numero);
+            alert("El número " + numero + " es " + resultado);
+        }
+
+        function parImpar(numero){
+            if(numero % 2 == 0) return "par";
+            else return "impar";
+        }
+    </script>
+</body>
+</html>

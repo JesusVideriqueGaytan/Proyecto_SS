@@ -1,0 +1,116 @@
+<!DOCTYPE >
+<html>
+<!--
+Tablas de Multiplicar"
+-->
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Tablas de Multiplicar</title>
+	<link rel="stylesheet" href="CSS/estiloblog.css">
+	</head>
+	<body>
+		<script language="javascript" src="js/varios.js"></script>
+		<div class="seccion">
+			<div class="caja">
+		<form>
+			Selecciona que n&uacute;mero de tabla
+			<select name="opTabla" id="opTabla">
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+				<option>6</option>
+				<option>7</option>
+				<option>8</option>
+				<option>9</option>
+				<option>10</option>
+			</select>
+
+			<p><input type="button" value="Ejecutar"
+						onclick="muestra(opTabla.value, tabla, document.getElementById('contenido'));"/>
+						<br/>
+			</p>
+			<br>
+			<div id="contenido" style="visibility:hidden">
+				<table id="tabla" border="2" >
+					<thead>
+						<th>Operaci&oacute;n</th>
+						<th>Resultado</th>
+						<th>Calificacion</th>
+					</thead>
+				</table>
+				<br><br>
+				<input type="button" value="Calificar Examen" onclick="califica(opTabla.value, tabla);"/>
+			</div>
+		</form>
+		</div>
+		</div>
+		<div class="seccion">
+			<h3><strong>Objetivo de la p&aacute;gina web</strong></h3>
+			<p style="text-align: justify;">Generar dinámicamente tablas de multiplicar seleccionables por el usuario, con funcionalidad de evaluación y calificación de resultados.</p>
+		
+			<h3><strong>Funcionalidad</strong></h3>
+			<p style="text-align: justify;">
+				<ul>
+					<li>Permite seleccionar una tabla de multiplicar (del 2 al 10) mediante un menú desplegable</li>
+					<li>Al hacer clic en "Ejecutar", muestra la tabla seleccionada en formato de operaciones matemáticas</li>
+					<li>Incluye un sistema de calificación que evalúa los resultados mostrados</li>
+					<li>La tabla generada contiene tres columnas: Operación, Resultado y Calificación</li>
+					<li>La sección de resultados permanece oculta hasta que se genera una tabla</li>
+				</ul>
+			</p>
+		
+			<h3><strong>Componentes principales</strong></h3>
+			<p style="text-align: justify;">
+				<ul>
+					<li><strong>select (opTabla)</strong> - Menú desplegable para seleccionar la tabla (2-10)</li>
+					<li><strong>Botón "Ejecutar"</strong> - Genera y muestra la tabla seleccionada</li>
+					<li><strong>Tabla dinámica</strong> - Muestra las operaciones de multiplicación</li>
+					<li><strong>Botón "Calificar Examen"</strong> - Evalúa y califica los resultados</li>
+					<li><strong>div (contenido)</strong> - Contenedor que se hace visible al generar resultados</li>
+				</ul>
+			</p>
+		
+			<h3><strong>Funciones JavaScript</strong></h3>
+			<p style="text-align: justify;">
+				<ul>
+					<li><strong>muestra(sValor, oTbl, oElemento)</strong> Función principal que:
+						<ul>
+							<li>Recibe tres parámetros: el número base (como cadena), la tabla HTML donde se insertarán los datos y el contenedor a mostrar.</li>
+							<li>Convierte el valor seleccionado a número y genera dinámicamente 10 filas con operaciones de multiplicar.</li>
+							<li>Cada fila incluye:
+								<ul>
+									<li>La operación (ej. "3 * 1").</li>
+									<li>Un campo de texto para ingresar el resultado.</li>
+									<li>Una celda para mostrar la calificación (se actualiza en la función <em>califica</em>).</li>
+								</ul>
+							</li>
+							<li>Si ya existía contenido en la tabla, primero elimina las filas anteriores.</li>
+							<li>Hace visible la sección de resultados.</li>
+						</ul>
+					</li>
+					<li><strong>califica(sValor, oTbl)</strong> Función que:
+						<ul>
+							<li>Recibe dos parámetros: el número base y la tabla a evaluar.</li>
+							<li>Recorre los campos de respuesta y verifica si el valor ingresado es correcto.</li>
+							<li>Si la respuesta es correcta, cambia el estilo del campo de texto (color de borde y fondo verde).</li>
+							<li>Cuenta el número de respuestas correctas y muestra una alerta con la calificación total.</li>
+							<li>Si detecta errores de captura (campos no numéricos), muestra un mensaje de error.</li>
+						</ul>
+					</li>
+					<li><strong>Métodos DOM utilizados:</strong>
+						<ul>
+							<li><strong>createElement()</strong> Crea nuevos elementos HTML dinámicamente.</li>
+							<li><strong>appendChild()</strong> Añade los nuevos elementos creados a la tabla.</li>
+							<li><strong>insertRow() / insertCell()</strong> Inserta nuevas filas y celdas en la tabla HTML.</li>
+							<li><strong>getElementById()</strong> Accede a los campos de texto para evaluar respuestas.</li>
+							<li><strong>deleteRow()</strong> Elimina filas de la tabla antes de volver a generar una nueva.</li>
+							<li><strong>style</strong> Modifica el estilo CSS de los campos de texto para indicar respuestas correctas.</li>
+						</ul>
+					</li>
+				</ul>
+			</p>
+		</div>
+	</body>
+</html>

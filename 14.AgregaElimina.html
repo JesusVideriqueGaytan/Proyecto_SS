@@ -1,0 +1,76 @@
+<!DOCTYPE>
+<html>
+<head>
+<title>Control submit por evento formulario</title>
+<link rel="stylesheet" href="CSS/estiloblog.css">
+</head>
+<body>
+	<div class="seccion">
+        <div class="caja">
+		<form>
+		<table id="tblUno">
+			<tr>
+				<th>Columna 1</th>
+				<th>Columna 2</th>
+			</tr>
+		</table>
+		<input type="button" value="Agregar" onclick = "agregaLinea();"/>
+		<br/>
+		<input type="button" value="Eliminar" onclick = "eliminaLinea();"/>
+		</form>
+		</div>
+	</div>
+
+
+	<script type="text/javascript">
+		function agregaLinea(){
+			var oTbl = document.getElementById("tblUno");
+			var oLin = oTbl.insertRow(-1);
+			var oCelda1 = oLin.insertCell(0);
+			var oCelda2 = oLin.insertCell(1);
+			var oCelda3 = oLin.insertCell(2);
+
+
+			oCelda1.innerHTML = "Celda";
+			oCelda2.innerHTML = 'Texto y campo ' +'<input type="text" name="campo"/>';
+oCelda3.innerHTML ="agregado"
+		}
+
+		function eliminaLinea(){
+			var oTbl = document.getElementById("tblUno");
+			oTbl.deleteRow(-1);
+		}
+	</script>
+	<div class="seccion">
+		<h3><strong>Objetivo de la p&aacute;gina web</strong></h3>
+		<p style="text-align: justify;">Demostrar el manejo dinámico de tablas HTML mediante JavaScript, permitiendo agregar y eliminar filas de forma interactiva.</p>
+	
+		<h3><strong>Funcionalidad</strong></h3>
+		<p style="text-align: justify;">
+			<ul>
+				<li>Permite agregar nuevas filas a la tabla con el botón "Agregar"</li>
+				<li>Cada fila nueva contiene celdas con texto y un campo de entrada</li>
+				<li>El botón "Eliminar" remueve la última fila agregada</li>
+				<li>La manipulación de la tabla se realiza sin recargar la página</li>
+			</ul>
+		</p>
+	
+		<h3><strong>Funciones JavaScript</strong></h3>
+		<p style="text-align: justify;">
+			<ul>
+				<li><strong>agregaLinea()</strong> Añade una nueva fila a la tabla con:
+					<ul>
+						<li>Una celda con texto fijo ("Celda")</li>
+						<li>Una celda con texto variable y un campo de entrada</li>
+						<li>Una celda con texto de confirmación ("agregado")</li>
+					</ul>
+				</li>
+				<li><strong>eliminaLinea()</strong> Elimina la última fila de la tabla</li>
+				<li><strong>insertRow()</strong> Método para añadir filas a la tabla</li>
+				<li><strong>insertCell()</strong> Método para añadir celdas a una fila</li>
+				<li><strong>deleteRow()</strong> Método para eliminar filas de la tabla</li>
+			</ul>
+		</p>
+	</div>
+</body>
+</html>
